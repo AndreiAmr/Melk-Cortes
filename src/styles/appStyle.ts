@@ -18,13 +18,15 @@ export const GlobalStyles = createGlobalStyle`
         max-width: 100vw;
         width: 100%;
         overflow-x: hidden;
-        
+        background: #ffffff;
         :root {
             --blue: #0085E5;
             --golden: #EFF31E;
             --white: #ffffff;
             --blue-text: #3C989E;
+            --blue-opacity: #0085E577
         }
+
     }
     
 `

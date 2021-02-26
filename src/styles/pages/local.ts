@@ -29,7 +29,7 @@ export const Container = styled.div`
 
 
     .divisor { 
-        width: 75vw;
+        width: 80vw;
         height: 2px;
         background: var(--blue);
         margin: 10px auto;
@@ -42,7 +42,7 @@ export const LeafletMap = styled.div`
     border-radius: 10px;
     overflow:hidden;
     background: var(--blue);
-    margin: 25px auto 0;
+    margin: 25px auto;
     position: relative;
 
 

@@ -16,6 +16,8 @@ export const Slider = styled.div`
     min-height: 270px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     
 `
 
@@ -24,54 +26,99 @@ export const ButtonsArea = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0 10px;
-    margin-top: calc(50% - 37px);
+    width: 100%;
+    margin: calc(50% - 18.5px) 0 ;
 
     > button {
-        height: 37px;
-        width: 37px;
-        border-radius: 18.5px;
+        height: 7vh;
+        width: 7vh;
+        border-radius: 3.5vh;
         border: none;
         outline: none;
         background-image: linear-gradient(to bottom, var(--blue), var(--blue-opacity));
         display: flex;
         justify-content: center;
         align-items: center;
-          z-index: 999;
+        z-index: 999;
+        transition: filter .2s;
+        
 
 
          div {
             background: var(--white);
-            width: 12px;
-            height: 2px;
+            width: 40%;
+            height: 3px;
+            
+            transition: transform .3s;
+         }
+
+        &:disabled{
+            filter: brightness(.6);
+
+            div {
+                &:first-child{ 
+                    transform: translateY(0) translateX(9px) rotate(-50deg) !important;
+                } 
+                &:last-child{ 
+                    transform: translateY(0) translateX(-7px) rotate(50deg) !important;
+                } 
+            }
         }
+        
 
         &.arrow-left {
+
                 div{
                     border-radius: 5px;
                     &:first-child {
-                        transform: translateY(-3px) translateX(4px) rotate(-30deg);
+                        transform: translateY(-4px) translateX(8px) rotate(-30deg);
                     }
                     &:last-child {
                         transform: translateY(2px) translateX(-8px) rotate(30deg);
                     }
                 }   
+
+                &.animation {
+                    
+                    div { 
+                        &:first-child {
+                            transform: translateY(0) translateX(8px) rotate(0deg);
+                        }
+                        
+                        &:last-child {
+                            transform: translateY(0) translateX(-8px) rotate(0deg);
+                        }
+                    }
+                }
         }
 
         &.arrow-right{
             div{
                 border-radius: 5px;
-
+            
                 &:first-child {
-                    transform: translateY(-3px) translateX(5px) rotate(30deg);
+                    transform: translateY(-6px) translateX(6px) rotate(30deg);
                 }
-                
                 &:last-child {
-                    transform: translateY(2px) translateX(-7px) rotate(-30deg);
+                    transform: translateY(1px) translateX(-10px) rotate(-30deg);
                 }
 
-                }   
-        }
+            }   
+
+            &.animation {
+                        
+                div { 
+                    &:first-child {
+                        transform: translateY(0) translateX(7px) rotate(0deg);
+                    }
+
+                    &:last-child {
+                        transform: translateY(0) translateX(-6px) rotate(0deg);
+                    }
+                }
+            }
         
+        }
     }
     
 `
@@ -84,13 +131,16 @@ export const SliderContentArea = styled.div`
     right: 0;
     display: flex;
     transform: translateX(0);
-    transition: transform .5s ease-out;
-    
+    transition: transform .5s ease-out;    
 
-    > img{ 
-        flex: 1;
-        min-width: 100%;
-        min-height: 100%;
+    > div{
+        min-width: 100vw;
+        height: 100%;
+        img { 
+            flex: 1;
+            min-width: 100vw;
+            max-height: 100%;
+        }
     }
 
     

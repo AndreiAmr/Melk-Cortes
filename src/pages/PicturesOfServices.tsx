@@ -6,41 +6,61 @@ import Haircut4 from "../images/haircuts/haircut4.jpeg";
 import { useState } from "react";
 
 function PicturesOfServices() {
-    const [currentImage, setCurrentImage] = useState<number>(1);
+    let [currentImage, setCurrentImage] = useState<number>(1);
     const [transformLeft, setTransformLeft] = useState(0);
+    const [ animateLeftButton, setAnimateLeftButton ] = useState<boolean>(false);
+    const [ animateRightButton, setAnimateRightButton ] = useState<boolean>(false);
+
+    const imagesPathList = [
+        Haircut1,
+        Haircut2,
+        Haircut3,
+        Haircut4,
+    ] as string[];
+
+    console.log(currentImage);
+
     
-    function handleSlideRight() {
-        if( currentImage === 4) return;
+    async function handleSlideRight() {
+        setAnimateRightButton(true);
         setCurrentImage(currentImage + 1);
         setTransformLeft(transformLeft + 100);
+
         
+        setTimeout(() => {
+            setAnimateRightButton(false);
+        }, 200)
     }
 
     function handleSlideLeft() {
-        if( currentImage === 1) return;
+        setAnimateLeftButton(true);
         setCurrentImage(currentImage - 1);
-        setTransformLeft(transformLeft - 100);
-        
+        setTransformLeft( transformLeft - 100);
+
+        setTimeout(() => {
+            setAnimateLeftButton(false);
+        }, 200)
     }
-    
+
     return (
         <Container>
             <h1> Imagens do meu trabalho</h1>
 
             <Slider>
-                <SliderContentArea style={{transform: `translateX(-${transformLeft}%)`}}>
-                    <img src={Haircut1} alt="Corte de cabelo" />
-                    <img src={Haircut2} alt="Corte de cabelo" />
-                    <img src={Haircut3} alt="Corte de cabelo" />
-                    <img src={Haircut4} alt="Corte de cabelo" />
+                <SliderContentArea style={{ transform: `translateX(-${transformLeft}%)` }}>
+                    {imagesPathList.map((url, indice) => (
+                        <div key={indice}>
+                            <img src={url} alt="Corte de cabelo" />
+                        </div>
+                    ))}
                 </SliderContentArea>
                 <ButtonsArea>
-                    <button type="button" className="arrow-left" onClick={handleSlideLeft}>
+                    <button type="button" className={`arrow-left ${animateLeftButton && 'animation' }`} onClick={handleSlideLeft} disabled={currentImage === 1}>
                         <div></div>
                         <div></div>
                     </button>
 
-                    <button type="button" className="arrow-right" onClick={handleSlideRight}>  
+                    <button type="button" className={`arrow-right ${animateRightButton&& 'animation' }`} onClick={handleSlideRight} disabled={currentImage == imagesPathList.length} >
                         <div></div>
                         <div></div>
 

@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
 
     > h1 {
         position: relative;
@@ -37,7 +42,8 @@ export const Container = styled.div`
 `
 
 export const LeafletMap = styled.div`
-    width: 80vw;
+    width: 90vw;
+    max-width: 400px;
     border: 2px solid var(--blue);
     border-radius: 10px;
     overflow:hidden;
@@ -48,7 +54,7 @@ export const LeafletMap = styled.div`
 
 
     > .leaflet-container {
-        height: 140px;
+        height: 160px;
         width: 100%;
     }
 
@@ -70,10 +76,12 @@ export const LeafletMap = styled.div`
         align-items: center;
         justify-content: space-around;
 
+        font-size: 1rem;
+
 
         > svg{ 
             color: var(--golden);
-            font-size:1rem; 
+            font-size:1.3rem; 
         }
         
     }

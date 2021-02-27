@@ -42,15 +42,14 @@ export const Header = styled.div`
 export const Content = styled.main`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items:center;
     position: relative;
     
 
     > h2 {
-        font-size: 1.3rem;
+        font-size: 2rem;
         color: var(--golden);
-        margin: 30px auto 15px;
+        margin: 15% auto 15px;
     }
 
     > h1 { 
@@ -58,6 +57,7 @@ export const Content = styled.main`
         justify-content: center;
         align-items: center;
         color: #fff;
+        font-size:2.2rem; 
 
         > img:first-child{  
             margin:0 5px
@@ -70,18 +70,18 @@ export const Content = styled.main`
 
         color: var(--white);
 
-        padding: 5px 10px;
-        margin: 25px;
+        padding: 3% 10px;
+        margin: 15% 0 0;
 
         border: 3px solid var(--golden);
         border-radius: 7px;
 
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600; 
     }
 
     > img {
-
+        margin-top: 10vh;
     }
 
     &:after{ 

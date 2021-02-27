@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Local from "./pages/Local";
 import Services from "./pages/Services";
 import PicturesOfServices from "./pages/PicturesOfServices";
+import  AboutMe  from "./pages/AboutMe";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Local />
       <Services />
       <PicturesOfServices />
+      <AboutMe />
     </Container>
   );
 }

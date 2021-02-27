@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Slider = styled.div`
     width: 100%;
-    min-height: 270px;
+    max-height: 270px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -30,12 +30,11 @@ export const ButtonsArea = styled.div`
     margin: calc(50% - 18.5px) 0 ;
 
     > button {
-        height: 7vh;
-        width: 7vh;
         border-radius: 3.5vh;
         border: none;
         outline: none;
-        background-image: linear-gradient(to bottom, var(--blue), var(--blue-opacity));
+        background: none;
+        /* background-image: linear-gradient(to bottom, var(--blue), var(--blue-opacity)); */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -46,7 +45,8 @@ export const ButtonsArea = styled.div`
 
          div {
             background: var(--white);
-            width: 40%;
+            box-shadow: 1px 2px 5px black;
+            width: 25px;
             height: 3px;
             
             transition: transform .3s;
@@ -57,10 +57,10 @@ export const ButtonsArea = styled.div`
 
             div {
                 &:first-child{ 
-                    transform: translateY(0) translateX(9px) rotate(-50deg) !important;
+                    transform: translateY(0) translateX(15px) rotate(-50deg) !important;
                 } 
                 &:last-child{ 
-                    transform: translateY(0) translateX(-7px) rotate(50deg) !important;
+                    transform: translateY(0) translateX(-8px) rotate(50deg) !important;
                 } 
             }
         }
@@ -71,7 +71,7 @@ export const ButtonsArea = styled.div`
                 div{
                     border-radius: 5px;
                     &:first-child {
-                        transform: translateY(-4px) translateX(8px) rotate(-30deg);
+                        transform: translateY(-9px) translateX(16px) rotate(-30deg);
                     }
                     &:last-child {
                         transform: translateY(2px) translateX(-8px) rotate(30deg);
@@ -82,11 +82,11 @@ export const ButtonsArea = styled.div`
                     
                     div { 
                         &:first-child {
-                            transform: translateY(0) translateX(8px) rotate(0deg);
+                            transform: translateY(0) translateX(9px) rotate(0deg);
                         }
                         
                         &:last-child {
-                            transform: translateY(0) translateX(-8px) rotate(0deg);
+                            transform: translateY(0) translateX(-12px) rotate(0deg);
                         }
                     }
                 }
@@ -97,10 +97,10 @@ export const ButtonsArea = styled.div`
                 border-radius: 5px;
             
                 &:first-child {
-                    transform: translateY(-6px) translateX(6px) rotate(30deg);
+                    transform: translateY(-12px) translateX(8px) rotate(30deg);
                 }
                 &:last-child {
-                    transform: translateY(1px) translateX(-10px) rotate(-30deg);
+                    transform: translateY(0) translateX(-16px) rotate(-30deg);
                 }
 
             }   
@@ -113,7 +113,7 @@ export const ButtonsArea = styled.div`
                     }
 
                     &:last-child {
-                        transform: translateY(0) translateX(-6px) rotate(0deg);
+                        transform: translateY(0) translateX(-14px) rotate(0deg);
                     }
                 }
             }

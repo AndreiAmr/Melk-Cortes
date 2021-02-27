@@ -18,8 +18,6 @@ function PicturesOfServices() {
         Haircut4,
     ] as string[];
 
-    console.log(currentImage);
-
     
     async function handleSlideRight() {
         setAnimateRightButton(true);
@@ -60,7 +58,7 @@ function PicturesOfServices() {
                         <div></div>
                     </button>
 
-                    <button type="button" className={`arrow-right ${animateRightButton&& 'animation' }`} onClick={handleSlideRight} disabled={currentImage == imagesPathList.length} >
+                    <button type="button" className={`arrow-right ${animateRightButton && 'animation' }`} onClick={handleSlideRight} disabled={currentImage === imagesPathList.length} >
                         <div></div>
                         <div></div>
 

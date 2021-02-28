@@ -1,36 +1,24 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { LoadingContext } from "../contexts/loadingContext";
 import { Container, Content } from "../styles/pages/AboutMe";
 
 
 export default function AboutMe() {
-    const {handleSetIsAboutMeLoaded} = useContext(LoadingContext)
-    
-    const [isBackgroundLoaded, setIsBackgroundLoaded] = useState<boolean>();
-    const [isPerfilLoaded, setIsPerfilLoaded] = useState<boolean>();
+    const {handleSetIsAboutMeLoaded} = useContext(LoadingContext);
 
     useEffect(() => {
         
-        window.addEventListener('load', handleSetContentIsLoaded)
-
-        if(isBackgroundLoaded && isPerfilLoaded) {
-            handleSetIsAboutMeLoaded(true)
-        }
-        
+        window.addEventListener('load', ()=> {
+           handleSetIsAboutMeLoaded(true)
+        })
         
         return () => {
-            window.removeEventListener('load', handleSetContentIsLoaded);
+            window.removeEventListener('load', ()=> {});
         }
         
-    }, [isBackgroundLoaded, isPerfilLoaded])
+    }, [handleSetIsAboutMeLoaded])
     
 
-    function handleSetContentIsLoaded(){
-
-        setIsBackgroundLoaded(true);
-        setIsPerfilLoaded(true);
-
-    }
     
 
     return (

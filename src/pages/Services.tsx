@@ -14,7 +14,7 @@ function Services() {
         return ()=> {
             window.removeEventListener('load', ()=> {})
         }
-    }, [])
+    }, [handleSetIsServicesLoaded])
     
     
     return (

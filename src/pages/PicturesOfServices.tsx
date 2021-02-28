@@ -23,15 +23,11 @@ function PicturesOfServices() {
         Haircut4,
     ] as string[];
 
-    console.log(imagesLoaded, imagesPathList.length)
-    
-    
-    
     useEffect(() => {
         
         if(imagesLoaded === imagesPathList.length) handleSetIsPicturesOfServiceLoaded(true);
         
-    }, [imagesLoaded])
+    }, [imagesLoaded, imagesPathList.length, handleSetIsPicturesOfServiceLoaded])
     
     
     async function handleSlideRight() {

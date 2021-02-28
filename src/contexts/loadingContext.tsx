@@ -1,8 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-interface LoadingProps {
-}
-
 interface LoadingContextData {
     handleSetIsAboutMeLoaded: (isLoaded: boolean) => void;
     handleSetIsServicesLoaded: (isLoaded: boolean) => void;

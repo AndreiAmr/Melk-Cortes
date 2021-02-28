@@ -6,11 +6,13 @@ import PicturesOfServices from "./pages/PicturesOfServices";
 import AboutMe from "./pages/AboutMe";
 import Loader from "./components/Loader";
 import { Provider } from "./contexts/loadingContext";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Container>
       <GlobalStyles />
+      <Header />
       <Provider >
         <Loader />
         <Home />

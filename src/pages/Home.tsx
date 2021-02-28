@@ -11,12 +11,11 @@ function Home() {
     const [ isScissorsLoaded, setIsScissorsLoaded ] = useState<boolean>(false);
     
     useEffect(() => {
-        if( isRazorLoaded && isWavesLoaded && isScissorsLoaded) return setIsPageLoaded();
-    },[isRazorLoaded, isWavesLoaded, isScissorsLoaded])
-    
-    function setIsPageLoaded() {
-        handleSetIsHomeLoaded(true)
-    }
+        if( isRazorLoaded && isWavesLoaded && isScissorsLoaded) return handleSetIsHomeLoaded(true);
+
+
+        
+    },[isRazorLoaded, isWavesLoaded, isScissorsLoaded, handleSetIsHomeLoaded])
     
     return (
         <Container>
@@ -37,7 +36,7 @@ function Home() {
                     <img src={require("../images/tesoura.svg").default} alt="Navalha" onLoad={() => setIsScissorsLoaded(true)} />
                 </h1>
 
-                <button type="button" > Agende Agora </button>
+                <button type="button" onClick={() => alert("clicked")}> Agende Agora </button>
                 <img src={require("../images/wave.svg").default} alt="waves" onLoad={() => setIsWavesLoaded(true)}/>
             </Content>
         </Container>

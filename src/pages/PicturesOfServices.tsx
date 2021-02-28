@@ -53,12 +53,10 @@ function PicturesOfServices() {
 
     return (
         <Container>
-            <h1> Imagens do meu trabalho</h1>
-
             <Slider>
-                <SliderContentArea style={{ transform: `translateX(-${transformLeft}%)` }}>
+                <SliderContentArea style={{ transform: `translateX(-${transformLeft}vw)` }}>
                     {imagesPathList.map((url, indice) => (
-                        <div key={indice}>
+                        <div key={indice }>
                             <img src={url} alt="Corte de cabelo" onLoad={() => setImagesLoaded(imagesLoaded + 1) }/>
                         </div>
                     ))}

@@ -2,12 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-
-    > h1 {
-        color: var(--blue);
-        font-size: 1.3rem;
-        margin: 4%
-    }
+    margin: 20px 0;
     overflow: hidden;
 `
 
@@ -18,6 +13,23 @@ export const Slider = styled.div`
     overflow: hidden;
     display: flex;
     align-items: center;
+    
+    @media(min-width: 768px) {
+        height: 35vh;
+        max-height: none;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+
+        >div {
+            /* border: 10px solid black; */
+        }
+    }
+
+    @media(min-width: 1024px) {
+        width: 90vw;
+        height: 90vh
+    }
     
 `
 

@@ -9,8 +9,9 @@ function Local() {
     const mapIcon = new Icon({
         iconUrl: require("../images/mapMarker.svg").default,
         className: 'marker-icon',
+        iconSize: [30, 30],
 
-        iconSize: [30, 30]
+        
     })
     
     return (

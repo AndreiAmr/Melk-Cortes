@@ -41,6 +41,16 @@ export const Container = styled.div`
         background: var(--blue);
         margin: 10px auto;
     }
+
+    @media(min-width: 768px){
+        > h1 {
+            font-size: 2.5rem
+        }
+
+        > p { 
+            font-size: 1.5rem;
+        }
+    }
 `
 
 export const LeafletMap = styled.div`
@@ -71,7 +81,6 @@ export const LeafletMap = styled.div`
         
         color: var(--white);
         text-decoration: none;
-        font-size: .9rem; 
         font-weight: 600;
 
         display: flex;
@@ -88,4 +97,29 @@ export const LeafletMap = styled.div`
         
     }
     
+
+    @media(min-width: 768px){
+
+        width: 70vw;
+        height: 30vh;
+        
+        > .leaflet-container {
+            height: 100%;
+            .marker-icon {
+                height: 8vh !important;
+                width: 8vh !important;
+                margin: -35px !important;
+            }
+            
+        }
+
+        > a {
+            height: 20%;
+            font-size: 1.2rem;
+
+            > svg {
+                font-size: 1.8rem
+            }
+        }
+    }
 `

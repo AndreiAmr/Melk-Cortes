@@ -19,11 +19,12 @@ export const GlobalStyles = createGlobalStyle`
         width: 100%;
         overflow-x: hidden;
         background: #ffffff;
+
         :root {
             --blue: #0085E5;
             --golden: #EFF31E;
             --white: #ffffff;
-            --blue-text: #3C989E;
+            --blue-text: #2272AB;
             --blue-opacity: #0085E577
         }
 

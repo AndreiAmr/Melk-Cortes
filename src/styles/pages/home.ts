@@ -6,7 +6,7 @@ export const Container = styled.div`
     margin: 0;
     background-image: linear-gradient(to bottom, var(--blue), var(--blue) );
     background-repeat: no-repeat;
-    /* background-position: 0 -10vh; */
+    overflow: hidden;
 `
 
 export const Header = styled.div`
@@ -44,6 +44,8 @@ export const Content = styled.main`
     flex-direction: column;
     align-items:center;
     position: relative;
+    overflow: hidden;
+
     
 
     > h2 {

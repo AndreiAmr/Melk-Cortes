@@ -8,6 +8,7 @@ export const Container = styled.div`
         font-size: 1.3rem;
         margin: 4%
     }
+    overflow: hidden;
 `
 
 export const Slider = styled.div`
@@ -39,8 +40,10 @@ export const ButtonsArea = styled.div`
         align-items: center;
         z-index: 999;
         transition: filter .2s;
-        
-
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
 
          div {
             background: var(--white);

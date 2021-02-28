@@ -1,35 +1,22 @@
 import styled from "styled-components";
 import Haircut from '../../images/serviceBG.jpeg';
+import Haircut3 from '../../images/haircuts/haircut3.jpeg';
+import Beard from "../../images/barba.jpg";
+import ChildHaircut from "../../images/corte-infantil.jpg";
 
 export const Container = styled.div`
     width: 100%;
-    height: 44vh;
-    min-height: 370px;
     position: relative;
+    margin:  50px 0 0;
 
-    background-image: url(${Haircut});
-    background-position: center;
-    background-repeat:no-repeat;
-    background-size: cover; 
-
-    margin: 20px 0;
-`
-
-
-export const Content = styled.div`
-    width: 100%;
-    height: 100%;
-
-    background: var(--blue-opacity);
-
+    
     > h1 { 
-        font-size: 1.4rem;
+        /* font-size: 1.4rem; */
         position: relative;
-        display: inline-block;
-        color: var(--white);
+        color: var(--blue);
         margin: 4%;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-
+        display: inline-flex;
+        align-items: center;
 
 
         &:after {
@@ -39,32 +26,105 @@ export const Content = styled.div`
             left: 0;
             width: 80%;
             height: 3px;
-            background: var(--white);
+            background: var(--blue);
         }
     }
 `
+export const Content = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+
+`
 
 export const Service = styled.div`
-
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 10px 0;
+    justify-content: center;
+    margin: 10px;
+    background-image: url(${Haircut});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background: var(--blue); */
+    border-radius: 10px;
+    width: 40vw;
+    filter: brightness(50%);
+    transition: filter .7s ;
 
     > h2 {
         color: var(--white);
-        margin: 5px 15px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        margin: 10px 0;
+        font-size: 1rem;
+        font-weight: 500;
+        /* text-shadow: 1px 1px 3px rgba(0,0,0,0.4); */
+        width: 100%;
+        padding-left: 4%;
+        display: flex;
+        align-items: center;
+        
+        transition: filter .1s;
+
+        >svg {
+            font-size: 1.3rem;
+            margin: 0 2%
+        }
     }
 
     > p {
-        margin: 0 20px;
+        margin: 5px 20px;
         color: var(--white);
         text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        margin-left: 12%;
+        font-size: .9rem;
 
     }
 
+    &:hover {
+        filter: brightness(100%);
 
+        > h2 {
+            filter: blur(0px)
+        }
+    } 
+
+
+    &:first-child, &:nth-child(2) {
+        width: 45vw;
+        height: 50vh;
+        margin: 5px;
+    }
+
+    &:nth-child(2) {
+        background-image: url(${Beard});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -250px ;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+        width: 100vw;
+        transition: background-position .7s;
+        
+        &:hover{ 
+            background-position: 0 35%;
+        }
+    }
+
+    &:nth-child(3) {
+        background-image: url(${ChildHaircut});
+        background-repeat: no-repeat;
+        background-size: center;
+        background-position: center ;
+    }
+    &:nth-child(4) {
+        background-image: url(${Haircut3});
+        background-repeat: no-repeat;
+        background-size: center;
+        background-position: 0 -40px ;
+    }
 `

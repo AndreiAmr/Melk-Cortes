@@ -3,13 +3,18 @@ import Haircut1 from "../images/haircuts/haircut1.jpeg";
 import Haircut2 from "../images/haircuts/haircut2.jpeg";
 import Haircut3 from "../images/haircuts/haircut3.jpeg";
 import Haircut4 from "../images/haircuts/haircut4.jpeg";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { LoadingContext } from "../contexts/loadingContext";
 
 function PicturesOfServices() {
     let [currentImage, setCurrentImage] = useState<number>(1);
     const [transformLeft, setTransformLeft] = useState(0);
     const [ animateLeftButton, setAnimateLeftButton ] = useState<boolean>(false);
     const [ animateRightButton, setAnimateRightButton ] = useState<boolean>(false);
+    const [imagesLoaded, setImagesLoaded] = useState<number>(0);
+
+    const { handleSetIsPicturesOfServiceLoaded } = useContext(LoadingContext) 
+    
 
     const imagesPathList = [
         Haircut1,
@@ -18,6 +23,16 @@ function PicturesOfServices() {
         Haircut4,
     ] as string[];
 
+    console.log(imagesLoaded, imagesPathList.length)
+    
+    
+    
+    useEffect(() => {
+        
+        if(imagesLoaded === imagesPathList.length) handleSetIsPicturesOfServiceLoaded(true);
+        
+    }, [imagesLoaded])
+    
     
     async function handleSlideRight() {
         setAnimateRightButton(true);
@@ -48,7 +63,7 @@ function PicturesOfServices() {
                 <SliderContentArea style={{ transform: `translateX(-${transformLeft}%)` }}>
                     {imagesPathList.map((url, indice) => (
                         <div key={indice}>
-                            <img src={url} alt="Corte de cabelo" />
+                            <img src={url} alt="Corte de cabelo" onLoad={() => setImagesLoaded(imagesLoaded + 1) }/>
                         </div>
                     ))}
                 </SliderContentArea>

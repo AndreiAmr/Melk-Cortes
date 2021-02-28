@@ -13,6 +13,8 @@ export const Container = styled.div`
         color: var(--blue);
         display: inline-block;
         margin-left: 4%;
+        display: flex;
+        align-items: center;
 
         &:after{ 
             content: "";

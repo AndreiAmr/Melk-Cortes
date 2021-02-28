@@ -50,7 +50,6 @@ export const Service = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* background: var(--blue); */
     border-radius: 10px;
     width: 40vw;
     filter: brightness(50%);
@@ -107,11 +106,12 @@ export const Service = styled.div`
     }
 
     &:nth-child(3), &:nth-child(4) {
-        width: 100vw;
+        width: 90vw;
+        height: 15vh;
         transition: background-position .7s;
         
         &:hover{ 
-            background-position: 0 35%;
+            background-position: 0 3%;
         }
     }
 
@@ -126,5 +126,29 @@ export const Service = styled.div`
         background-repeat: no-repeat;
         background-size: center;
         background-position: 0 -40px ;
+
+        &:hover{ 
+            background-position: 0 38%;
+        }
     }
+
+
+    @media(min-width: 1024px){ 
+
+        &:nth-child(1), &:nth-child(2) {
+            height: 55vh;
+            width: 25%;
+        }
+
+        &:nth-child(2) {
+            background-position: center;
+        }
+
+        &:nth-child(3), &:nth-child(4) {
+            width: 50vw;
+            height: 30vh;
+            
+        }
+    }
+    
 `
